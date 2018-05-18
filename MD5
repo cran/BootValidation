@@ -1,6 +1,9 @@
-8c0029dc41389b93f845faa88e422279 *DESCRIPTION
-48c642b558638b932d43b75b40c4642d *NAMESPACE
-4c93844c9fd8c8233d8b985277cde955 *R/parallel_vboot.R
-a61dce8ae00fe4a04969b3cee17179f6 *man/vboot.Rd
-f0faaf08f66c9c23ae2d854d19777426 *man/vboot.elnet.Rd
-5fc60aaac79706d3cb5ff413298485d1 *man/vboot.lognet.Rd
+f9f6b39d7bcff5ecbebbd4be8f354841 *DESCRIPTION
+3ef141939d334446301da2c1c40fb493 *NAMESPACE
+82ad2d5f6a3147cd1f3589b058060d69 *R/parallel_vboot.R
+7935024b158ea07e0eca2abd24781755 *README.md
+d8cae3784d5abd65370818ccc40ba080 *man/vboot.Rd
+4c04880d5922f99ac6e405dbf105c7e0 *man/vboot.coxnet.Rd
+40fdf36956bcc37a7feda3bc2f2e1860 *man/vboot.elnet.Rd
+4ecfbd614958776c873f1e31d8be5e4f *man/vboot.lognet.Rd
+773b6f80ee649986cdb97fba1b535b4d *man/vboot.multnet.Rd

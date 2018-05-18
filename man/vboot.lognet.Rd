@@ -2,9 +2,10 @@
 % Please edit documentation in R/parallel_vboot.R
 \name{vboot.lognet}
 \alias{vboot.lognet}
-\title{Internal bootstraping validation}
+\title{Internal bootstraping validation logistic glmnet model}
 \usage{
-\method{vboot}{lognet}(glmnet_fit, x, y, s, nfolds, B, cv_replicates, n_cores)
+\method{vboot}{lognet}(glmnet_fit, x, y, s, nfolds, B, cv_replicates,
+  n_cores = max(1, parallel::detectCores() - 1))
 }
 \arguments{
 \item{glmnet_fit}{Object from glmnet fit}

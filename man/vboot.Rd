@@ -12,11 +12,11 @@ vboot(glmnet_fit, x, y, s, nfolds = 5, B = 200, cv_replicates = 100,
 
 \item{x}{A matrix of the predictors, each row is an observation vector.}
 
-\item{y}{A vector of response variable. It can be numeric or factor with two levels}
+\item{y}{A vector of response variable. It should be quantitative for lineal regression, a factor with two levels for logistic regression or a two-column matrix with columns named 'time' and 'status' for cox regression.}
 
-\item{s}{Value of the penalty parameter "lambda" selected from the original cv.glmnet}
+\item{s}{Value of the penalty parameter "lambda" selected from the original 'cv.glmnet'.}
 
-\item{nfolds}{Number of folds for cross validation as in cv.glmnet}
+\item{nfolds}{Number of folds for cross validation as in 'cv.glmnet'.}
 
 \item{B}{Number of bootsrap samples}
 
@@ -25,7 +25,7 @@ vboot(glmnet_fit, x, y, s, nfolds = 5, B = 200, cv_replicates = 100,
 \item{n_cores}{number of cores to use in parallel. Default detectCores()-1}
 }
 \description{
-Validate 'glmnet' linear or logistic regression using bootstrap.
+Validate 'glmnet' linear, logistic or cox regression using bootstrap.
 }
 \examples{
 # Create the data
@@ -40,5 +40,9 @@ vboot(fit_enet, x, y, nfolds = 3, B = 2, s = 0.5, cv_replicates = 5, n_cores = 1
 \references{
 Jerome Friedman, Trevor Hastie, Robert Tibshirani (2010). Regularization Paths for Generalized Linear Models via Coordinate Descent. Journal of Statistical Software, 33(1), 1-22. URL http://www.jstatsoft.org/v33/i01/.
 
-Frank Harrell (2015). Harrell Jr, F. E. (2015). Regression modeling strategies: with applications to linear models, logistic and ordinal regression, and survival analysis. Springer.
+Noah Simon, Jerome Friedman, Trevor Hastie, Rob Tibshirani (2011). Regularization Paths for Cox's Proportional Hazards Model via Coordinate Descent. Journal of Statistical Software, 39(5), 1-13. URL http://www.jstatsoft.org/v39/i05/.
+
+Harrell Jr, F. E. (2015). Regression modeling strategies: with applications to linear models, logistic and ordinal regression, and survival analysis. Springer.
+
+Gordon C.S. Smith, Shaun R. Seaman, Angela M. Wood, Patrick Royston, Ian R. White (2014). Correcting for Optimistic Prediction in Small Data Sets, American Journal of Epidemiology, Volume 180, Issue 3, 1 August 2014, Pages 318-324, https://doi.org/10.1093/aje/kwu140
 }
