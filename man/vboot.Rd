@@ -4,25 +4,27 @@
 \alias{vboot}
 \title{Generic function for bootstrap validation}
 \usage{
-vboot(glmnet_fit, x, y, s, nfolds = 5, B = 200, cv_replicates = 100,
-  n_cores = max(1, parallel::detectCores() - 1))
+vboot(fit, x, y, s, nfolds = 5, B = 200, cv_replicates = 100,
+  lambda = TRUE, n_cores = max(1, parallel::detectCores() - 1))
 }
 \arguments{
-\item{glmnet_fit}{Object from glmnet fit}
+\item{fit}{Object from glmnet fit.}
 
 \item{x}{A matrix of the predictors, each row is an observation vector.}
 
-\item{y}{A vector of response variable. It should be quantitative for lineal regression, a factor with two levels for logistic regression or a two-column matrix with columns named 'time' and 'status' for cox regression.}
+\item{y}{A vector of response variable. It should be quantitative for lineal regression, a factor with two levels for logistic regression, a factor with more than two levels for multinomial regression or a two-column matrix with columns named 'time' and 'status' for cox regression.}
 
 \item{s}{Value of the penalty parameter "lambda" selected from the original 'cv.glmnet'.}
 
 \item{nfolds}{Number of folds for cross validation as in 'cv.glmnet'.}
 
-\item{B}{Number of bootsrap samples}
+\item{B}{Number of bootsrap samples.}
 
-\item{cv_replicates}{Number of replicates for the cross-validation step}
+\item{cv_replicates}{Number of replicates for the cross-validation step.}
 
-\item{n_cores}{number of cores to use in parallel. Default detectCores()-1}
+\item{lambda}{By default, the validation is adjusted using 'lambda.1se' which has error within 1 standard error of the best model. If 'FALSE' the 'lambda.min' referered to the lowest CV error will be used.}
+
+\item{n_cores}{number of cores to use in parallel. Default detectCores()-1.}
 }
 \description{
 Validate 'glmnet' linear, logistic or cox regression using bootstrap.
